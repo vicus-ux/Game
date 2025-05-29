@@ -124,13 +124,13 @@ public class Game extends JFrame {
 
             if (running) {
                 // apple
-                g.setColor(Color.RED);
+                g.setColor(Color.YELLOW);
                 g.fillOval(appleX, appleY, TILE_SIZE, TILE_SIZE);
 
                 // Змейка
                 for (int i = 0; i < bodyParts; i++) {
                     if (i == 0) {
-                        g.setColor(Color.PINK); // head
+                        g.setColor(new Color(204,102,255)); // head
                     } else {
                         g.setColor(new Color(132, 0, 190)); // body
                     }
