@@ -108,19 +108,19 @@ public class Game extends JFrame {
             timer.stop();
         }
     }
-
+    //pokaz game and enter
     private class GamePanel extends JPanel implements KeyListener {
 
         public GamePanel() {
             setPreferredSize(new Dimension(WIDTH * TILE_SIZE, HEIGHT * TILE_SIZE));
             setBackground(Color.BLACK);
-            setFocusable(true);
-            addKeyListener(this);
+            setFocusable(true);//фокусируемая панель, для обработки клавиш
+            addKeyListener(this);//отмечает текущий объектa gamePanel
         }
 
         @Override
         protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
+            super.paintComponent(g);//вызов реализации JPanel
 
             if (running) {
                 // apple
@@ -139,22 +139,22 @@ public class Game extends JFrame {
 
                 // count
                 g.setColor(Color.WHITE);
-                g.setFont(new Font("Arial", Font.BOLD, 20));
+                g.setFont(new Font("Times New Roman", Font.BOLD, 20));
                 g.drawString("Счет: " + applesEaten, 10, 20);
             } else {
                 // the end
-                g.setColor(Color.RED);
-                g.setFont(new Font("Arial", Font.BOLD, 40));
+                g.setColor(new Color(170,0,150));
+                g.setFont(new Font("Times New Roman", Font.BOLD, 40));
                 g.drawString("Игра окончена!",
                         getWidth()/2 - 150, getHeight()/2 - 50);
 
                 g.setColor(Color.WHITE);
-                g.setFont(new Font("Arial", Font.PLAIN, 20));
+                g.setFont(new Font("Times New Roman", Font.PLAIN, 20));
                 g.drawString("Счет: " + applesEaten,
                         getWidth()/2 - 40, getHeight()/2);
 
                 g.drawString("Нажмите пробел для рестарта",
-                        getWidth()/2 - 120, getHeight()/2 + 50);
+                        getWidth()/2 - 140, getHeight()/2 + 50);
             }
         }
 
@@ -188,8 +188,8 @@ public class Game extends JFrame {
             }
         }
 
-        @Override public void keyTyped(KeyEvent e) {}
-        @Override public void keyReleased(KeyEvent e) {}
+        @Override public void keyTyped(KeyEvent e) {}//для клавиш с символами
+        @Override public void keyReleased(KeyEvent e) {}//нужно только нажатие клавиш а не опускание
     }
 
     public static void main(String[] args) {
